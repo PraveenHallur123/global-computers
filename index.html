@@ -1,0 +1,368 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Global Computers</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Google Fonts: Orbitron & Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* Simple, Professional Navbar Styles */
+    .site-header {
+      width: 100%;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #fff;
+      border-bottom: 1px solid #e0e6f6;
+      box-shadow: 0 2px 8px 0 rgba(0,0,0,0.04);
+      margin-bottom: 2em;
+      padding: 0.5em 0;
+    }
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5em;
+    }
+    .logo-area {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      gap: 0.7em;
+    }
+    .logo-img {
+      height: 38px;
+      width: 38px;
+    }
+    .logo-text {
+      font-size: 1.2em;
+      font-weight: 700;
+      color: #23243a;
+      letter-spacing: 1px;
+      font-family: 'Orbitron', 'Poppins', Arial, sans-serif;
+    }
+    .main-nav ul {
+      display: flex;
+      gap: 1.5em;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .main-nav .nav-link {
+      color: #23243a;
+      font-family: 'Poppins', Arial, sans-serif;
+      font-weight: 500;
+      text-decoration: none;
+      font-size: 1.05em;
+      padding: 0.3em 0.7em;
+      border-radius: 6px;
+      transition: background 0.15s, color 0.15s;
+    }
+    .main-nav .nav-link:hover,
+    .main-nav .nav-link.active {
+      background: #f0f4fa;
+      color: #00796b;
+    }
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      height: 36px;
+      width: 36px;
+      padding: 0;
+    }
+    .nav-toggle span {
+      display: block;
+      height: 3px;
+      width: 26px;
+      background: #00796b;
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+    @media (max-width: 900px) {
+      .nav-container {
+        padding: 0 0.7em;
+      }
+      .main-nav ul {
+        gap: 1em;
+      }
+    }
+    @media (max-width: 700px) {
+      .main-nav {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        background: #fff;
+        border-bottom: 1px solid #e0e6f6;
+        box-shadow: 0 8px 24px 0 rgba(0,0,0,0.04);
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.3s;
+        z-index: 99;
+      }
+      .main-nav.open {
+        max-height: 300px;
+        transition: max-height 0.4s;
+      }
+      .main-nav ul {
+        flex-direction: column;
+        gap: 0.5em;
+        padding: 1em 0;
+        align-items: center;
+      }
+      .nav-toggle {
+        display: flex;
+      }
+    }
+  </style>
+  <script>
+    // Simple Responsive Navbar Toggle Script
+    document.addEventListener('DOMContentLoaded', function() {
+      const navToggle = document.getElementById('navToggle');
+      const mainNav = document.getElementById('mainNav');
+      navToggle.addEventListener('click', function() {
+        mainNav.classList.toggle('open');
+      });
+      mainNav.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          mainNav.classList.remove('open');
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+
+<!-- Simple Professional Header & Navbar -->
+<header class="site-header">
+  <div class="nav-container">
+    <a href="index.html" class="logo-area">
+      <img src="https://img.icons8.com/fluency/48/laptop-coding.png" alt="Global Computers Logo" class="logo-img">
+      <span class="logo-text">Global Computers Sales and Service</span>
+    </a>
+    <nav class="main-nav" id="mainNav">
+      <ul>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#products" class="nav-link">Products</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-bg-animation"></div>
+  <div class="hero-content glass">
+    <img 
+      src="https://img.icons8.com/fluency/120/laptop-coding.png" 
+      alt="Global Computers Logo" 
+      class="hero-img"
+      style="margin-bottom: 1.2em; filter: drop-shadow(0 0 24px #00ffe7); max-width: 120px; width: 100%;"
+    >
+    <h1 class="neon-text">Global Computers Sales and Service </h1>
+    <p class="tagline">Empowering Your Digital World</p> <br>
+    <a href="#products" class="cta-btn neon-btn">Explore Products</a>
+  </div>
+</section>
+
+<section id="about" class="section glass">
+  <h2 class="section-title neon-text">About Us</h2>
+  <p>
+    At <b>Global Computers</b>, we provide expert computer and laptop repair, printer servicing, a wide range of accessories, and the latest tech sales. Our mission is to deliver reliable, fast, and affordable solutions for all your technology needs.
+  </p>
+  <ul class="about-services">
+    <li>✔ Computer & Laptop Repair</li>
+    <li>✔ Printer Service & Maintenance</li>
+    <li>✔ Accessories & Peripherals</li>
+    <li>✔ New & Refurbished Sales</li>
+    <li>✔ Networking Solutions</li>
+  </ul>
+</section>
+
+<section id="products" class="section">
+  <h2 class="section-title neon-text">Products</h2>
+  <div class="products-grid">
+    <div class="product-card glass animate-on-scroll">
+      <img src="computer-mouse.png" alt="Mouse">
+      <h3>Mouse</h3>
+      <p>Precision and comfort for every click.</p>
+    </div>
+    <div class="product-card glass animate-on-scroll">
+      <img src="https://img.icons8.com/fluency/96/keyboard.png" alt="Keyboard">
+      <h3>Keyboard</h3>
+      <p>Responsive keys for smooth typing.</p>
+    </div>
+    <div class="product-card glass animate-on-scroll">
+      <img src="printer.png" alt="Printer">
+      <h3>Printer</h3>
+      <p>High-quality prints, every time.</p>
+    </div>
+    <div class="product-card glass animate-on-scroll">
+      <img src="https://img.icons8.com/fluency/96/monitor.png" alt="Monitor">
+      <h3>Monitor</h3>
+      <p>Vivid displays for work and play.</p>
+    </div>
+    <div class="product-card glass animate-on-scroll">
+      <img src="pendrive.png" alt="Pendrive">
+      <h3>Pendrive</h3>
+      <p>Portable storage, always ready.</p>
+    </div>
+    <div class="product-card glass animate-on-scroll">
+      <img src="https://img.icons8.com/fluency/96/headphones.png" alt="Headphones">
+      <h3>Headphones</h3>
+      <p>Immersive sound experience.</p>
+    </div>
+    <div class="product-card glass animate-on-scroll">
+      <img src="computer.png" alt="Desktop PC">
+      <h3>Desktop PC</h3>
+      <p>Powerful desktops for home and office.</p>
+    </div>
+    <div class="product-card glass animate-on-scroll">
+      <img src="https://img.icons8.com/fluency/96/laptop.png" alt="Laptop">
+      <h3>Laptop</h3>
+      <p>Portable performance for work and play.</p>
+    </div>
+  </div>
+</section>
+
+<section id="brands" class="section glass">
+  <h2 class="section-title neon-text">Brands We Partner With</h2>
+  <div class="brands-logos" style="display:flex;flex-wrap:wrap;gap:2em;justify-content:center;align-items:center;margin-top:2em;">
+    <img src="https://img.icons8.com/color/96/000000/dell.png" alt="Dell" title="Dell" style="height:64px;">
+    <img src="https://img.icons8.com/color/96/000000/hp.png" alt="HP" title="HP" style="height:64px;">
+    <img src="https://img.icons8.com/color/96/000000/lenovo.png" alt="Lenovo" title="Lenovo" style="height:64px;">
+  </div>
+</section>
+
+<section id="services" class="section glass">
+  <h2 class="section-title neon-text">Services</h2>
+  <div class="services-list">
+    <div class="service-item animate-on-scroll">
+      <img src="icons8-hardware-48.png" alt="Hardware Solutions" style="margin-bottom:0.7em;">
+      <h3>Hardware Solutions</h3>
+      <p>Upgrades, repairs, and replacements for all major brands.</p>
+    </div>
+    <div class="service-item animate-on-scroll">
+      <img src="https://img.icons8.com/fluency/48/software-installer.png" alt="Software Solutions" style="margin-bottom:0.7em;">
+      <h3>Software Solutions</h3>
+      <p>OS installation, virus removal, data recovery, and more.</p>
+    </div>
+    <div class="service-item animate-on-scroll">
+      <img src="https://img.icons8.com/fluency/48/network.png" alt="Networking" style="margin-bottom:0.7em;">
+      <h3>Networking</h3>
+      <p>Setup and troubleshooting for home and office networks.</p>
+    </div>
+    <div class="service-item animate-on-scroll">
+      <img src="https://img.icons8.com/fluency/48/consultation.png" alt="Consultation" style="margin-bottom:0.7em;">
+      <h3>Consultation</h3>
+      <p>Expert advice for your next tech purchase or upgrade.</p>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials" class="section">
+  <h2 class="section-title neon-text">Testimonials</h2>
+  <div class="testimonial-carousel glass">
+    <button class="carousel-btn prev">&#10094;</button>
+    <div class="testimonial-content">
+      <div class="testimonial active">
+        <p>"Global Computers fixed my laptop in no time. Excellent service and friendly staff!"</p>
+        <span>- PKPS Chimmad </span>
+      </div>
+      <div class="testimonial">
+        <p>"Bought a new monitor here. Great prices and glowing recommendations!"</p>
+        <span>- Praveen M H.</span>
+      </div>
+      <div class="testimonial">
+        <p>"They recovered my lost data and saved my business. Highly recommended!"</p>
+        <span>- Maning M.</span>
+      </div>
+      <div class="testimonial">
+        <p>"Best place for computer accessories. The neon-themed store is so cool!"</p>
+        <span>- Sadu M.</span>
+      </div>
+    </div>
+    <button class="carousel-btn next">&#10095;</button>
+  </div>
+</section>
+
+<section id="contact" class="section glass">
+  <h2 class="section-title neon-text">Contact Us</h2>
+  <div class="contact-container">
+    <form class="contact-form" id="contactForm" autocomplete="off" onsubmit="sendEmail(event)">
+      <input type="text" name="name" id="name" placeholder="Your Name" required>
+      <input type="email" name="email" id="email" placeholder="Your Email" required>
+      <input type="tel" name="phone" id="phone" placeholder="Your Phone">
+      <textarea name="message" id="message" placeholder="Your Message" required></textarea>
+      <button type="submit" class="neon-btn">Send Message</button>
+    </form>
+    <div class="contact-info">
+      <p><strong>Email:</strong> <a href="mailto:prakash85049@gmail.com">prakash85049@gmail.com</a></p>
+      <p><strong>Phone 1:</strong> <a href="tel:+917019872638">+91 70198 72638</a></p>
+      <p><strong>Phone 2:</strong> <a href="tel:+919972517678">+91 99725 17678</a></p>
+      <div class="map-placeholder" style="margin-top: 1em;">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d243.57482550674538!2d75.10928205502844!3d16.390652577352267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc7370011bc8097%3A0x20dc4a116870de2e!2sGlobal%20Computer%20Sales%20and%20Services!5e0!3m2!1sen!2sin!4v1746543095513!5m2!1sen!2sin"
+          width="100%" height="250" style="border:0; border-radius:12px;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+function sendEmail(event) {
+  event.preventDefault();
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const phone = document.getElementById("phone").value;
+  const message = document.getElementById("message").value;
+  const subject = encodeURIComponent("Message from " + name);
+  const body = encodeURIComponent(
+    `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`
+  );
+  window.location.href = `mailto:prakash85049@gmail.com?subject=${subject}&body=${body}`;
+}
+</script>
+
+<footer class="footer glass">
+  <div class="footer-links">
+    <a href="#about">About</a>
+    <a href="#products">Products</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="footer-social">
+    <a href="https://www.facebook.com/praveen.hallur.143?rdid=76ey4WTLWzA9d0nm&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F19sapEapBu%2F" title="Facebook"><img src="https://img.icons8.com/fluency/32/facebook-new.png" alt="Facebook"></a>
+    <a href="https://x.com/praveenhallur72?t=x1GfFuSg3qwA6TLlnhVJeQ&s=09" title="Twitter"><img src="https://img.icons8.com/fluency/32/twitter.png" alt="Twitter"></a>
+    <a href="https://www.instagram.com/mr.praveen_hallur/?hl=en" title="Instagram"><img src="https://img.icons8.com/fluency/32/instagram-new.png" alt="Instagram"></a>
+    <a href="https://www.linkedin.com/in/praveen-hallur-9463ba1bb/?locale=en_US" title="LinkedIn"><img src="https://img.icons8.com/fluency/32/linkedin.png" alt="LinkedIn"></a>
+  </div>
+  <div class="footer-copy">
+    &copy; 2024 Global Computers. All rights reserved.<br>
+    Developed by <a href="https://praveen-hallur.netlify.app/" target="_blank"><strong>Praveen Hallur</strong></a> at 
+    <a href="https://miniprojectbytes.blogspot.com/" target="_blank"><strong>Mini Project Bytes</strong></a>.
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
