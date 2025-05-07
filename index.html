@@ -242,14 +242,52 @@
   </div>
 </section>
 
+
+
+<!-- Brands Section: Simple & Professional -->
 <section id="brands" class="section glass">
   <h2 class="section-title neon-text">Brands We Partner With</h2>
-  <div class="brands-logos" style="display:flex;flex-wrap:wrap;gap:2em;justify-content:center;align-items:center;margin-top:2em;">
-    <img src="https://img.icons8.com/color/96/000000/dell.png" alt="Dell" title="Dell" style="height:64px;">
-    <img src="https://img.icons8.com/color/96/000000/hp.png" alt="HP" title="HP" style="height:64px;">
-    <img src="https://img.icons8.com/color/96/000000/lenovo.png" alt="Lenovo" title="Lenovo" style="height:64px;">
+  <div class="brands-logos-static">
+    <img src="https://img.icons8.com/color/96/000000/dell.png" alt="Dell" title="Dell" class="brand-logo">
+    <img src="https://img.icons8.com/color/96/000000/hp.png" alt="HP" title="HP" class="brand-logo">
+    <img src="https://img.icons8.com/color/96/000000/lenovo.png" alt="Lenovo" title="Lenovo" class="brand-logo">
+    <img src="https://img.icons8.com/color/48/microsoft.png" alt="MicroSoft" title="MicroSoft" class="brand-logo">
+    <img src="acer.png" alt="Acer" title="Acer" class="brand-logo">
+    <img src="lg.png" alt="LG" title="LG" class="brand-logo">
   </div>
 </section>
+<style>
+.brands-logos-static {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2em;
+  padding: 1em 0;
+}
+.brand-logo {
+  height: 64px;
+  filter: grayscale(100%) brightness(0.9);
+  transition: filter 0.3s, transform 0.3s;
+  opacity: 0.85;
+  cursor: pointer;
+}
+.brand-logo:hover {
+  filter: grayscale(0%) brightness(1.1) drop-shadow(0 0 8px #00ffe7);
+  opacity: 1;
+  transform: scale(1.07);
+}
+@media (max-width: 600px) {
+  .brands-logos-static {
+    gap: 1em;
+  }
+  .brand-logo {
+    height: 48px;
+  }
+}
+</style>
+
 
 <section id="services" class="section glass">
   <h2 class="section-title neon-text">Services</h2>
